@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom Fungi | สื่อโต้ตอบชีววิทยา ม.6</title>
+<style>
+:root{--bg:#f5f7f2;--card:#fff;--ink:#20302b;--muted:#61716a;--green:#28664d;--lime:#d9edc8;--gold:#f2c66d;--line:#dce5dc;--red:#a83d36}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,"Noto Sans Thai",sans-serif;line-height:1.65}
+header{background:linear-gradient(120deg,#173f32,#39765a);color:white;padding:34px 20px 28px}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}header .eyebrow{letter-spacing:.08em;color:#d6e9d9;font-size:.9rem}h1{font-size:clamp(2rem,5vw,3.2rem);margin:4px 0}header p{max-width:760px;margin:8px 0;color:#e8f2e8}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px auto 0}.tab{border:1px solid #cbd9ce;background:white;color:var(--green);border-radius:999px;padding:9px 16px;font-weight:bold;cursor:pointer}.tab.active,.tab:hover{background:var(--gold);color:#26372e;border-color:var(--gold)}
+main{padding:24px 0 50px}.panel{display:none}.panel.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:0 0 18px;box-shadow:0 5px 18px #243b2b0a}
+h2{font-size:1.55rem;margin:0 0 12px;color:var(--green)}h3{margin:0 0 8px;color:#315c46}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.pill{display:inline-block;background:#edf5e9;color:#315d43;padding:3px 10px;border-radius:99px;font-size:.85rem;margin:2px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf4ec;color:#315c46}
+.callout{background:#fff7df;border-left:4px solid var(--gold);padding:12px 15px;border-radius:8px;margin:12px 0}
+button,.action{background:var(--green);color:white;border:0;border-radius:10px;padding:10px 15px;font-weight:bold;cursor:pointer}button.secondary{background:#e9f1e8;color:var(--green)}button:hover{filter:brightness(1.08)}
+canvas{width:100%;max-width:100%;background:#f7faf5;border:1px solid var(--line);border-radius:14px;display:block}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}input[type=range]{accent-color:var(--green);width:min(320px,100%)}
+.quiz-q{padding:16px 0;border-bottom:1px solid var(--line)}.quiz-q p{font-weight:bold;margin:0 0 8px}.opt{display:block;padding:7px 10px;margin:5px 0;border:1px solid var(--line);border-radius:9px;cursor:pointer}.opt:hover{background:#f1f7ee}.opt input{margin-right:8px;accent-color:var(--green)}
+.feedback{font-size:.92rem;margin-top:7px;color:var(--muted)}.correct{color:#267346}.wrong{color:var(--red)}.score{font-size:1.25rem;font-weight:bold;color:var(--green)}
+footer{text-align:center;color:var(--muted);padding:22px;font-size:.9rem}
+@media(max-width:650px){.card{padding:16px}table{font-size:.85rem}th,td{padding:7px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">BIOLOGY • มัธยมศึกษาปีที่ 6</div>
+<h1>Kingdom Fungi 🍄</h1>
+<p>สำรวจอาณาจักรฟังไจ ตั้งแต่โครงสร้างเส้นใย การดำรงชีวิต ไปจนถึงความหลากหลายของไฟลัม พร้อมทดลองภาพเคลื่อนไหวและทดสอบความเข้าใจ</p>
+<nav>
+<button class="tab active" data-tab="learn">เรียนรู้</button><button class="tab" data-tab="explore">ทดลองเส้นใย</button><button class="tab" data-tab="classify">จำแนกไฟลัม</button><button class="tab" data-tab="quiz">แบบทดสอบ 20 ข้อ</button>
+</nav></div></header>
+<main class="wrap">
+<section id="learn" class="panel active">
+<div class="card">
+<h2>เป้าหมายการเรียนรู้</h2><div class="grid">
+<div><span class="pill">K • Knowledge</span><p>อธิบายชนิดเซลล์ ผนังเซลล์ โครงสร้าง การดำรงชีวิต และการสืบพันธุ์ของฟังไจได้</p></div>
+<div><span class="pill">S • Skills</span><p>ใช้ลักษณะโครงสร้างและรูปแบบการดำรงชีวิตเพื่อจำแนกฟังไจในแต่ละไฟลัมได้</p></div>
+<div><span class="pill">A • Attitude</span><p>เห็นความสำคัญของฟังไจต่อการหมุนเวียนสาร ระบบนิเวศ อาหาร และสุขภาพของมนุษย์</p></div>
+</div></div>
+<div class="card"><h2>ลักษณะสำคัญของอาณาจักรฟังไจ</h2>
+<div class="grid">
+<div><h3>ชนิดของเซลล์</h3><p>เป็นยูคาริโอต มีนิวเคลียสและออร์แกเนลล์ที่มีเยื่อหุ้ม ส่วนใหญ่หลายเซลล์ แต่ยีสต์เป็นเซลล์เดียว</p></div>
+<div><h3>ผนังเซลล์</h3><p>มีไคตินเป็นองค์ประกอบสำคัญ ร่วมกับกลูแคนและสารอื่น ๆ แตกต่างจากพืชที่มีผนังเซลล์เซลลูโลส</p></div>
+<div><h3>โครงสร้างร่างกาย</h3><p>ส่วนใหญ่ประกอบด้วยเส้นใยรา (hyphae) รวมกันเป็นไมซีเลียม (mycelium) บางชนิดมีเส้นใยมีผนังกั้น บางชนิดไม่มีผนังกั้นชัดเจน</p></div>
+<div><h3>การได้อาหาร</h3><p>ไม่มีคลอโรฟิลล์ ไม่สังเคราะห์ด้วยแสง เป็นผู้บริโภคแบบดูดซึม โดยปล่อยเอนไซม์ย่อยภายนอกแล้วดูดซึมสารอาหาร</p></div>
+</div>
+<div class="callout"><b>จำให้แม่น:</b> ฟังไจไม่ใช่พืช แม้ส่วนใหญ่ไม่เคลื่อนที่และมีผนังเซลล์ แต่ได้อาหารด้วยการย่อยภายนอกและดูดซึม</div>
+</div>
+<div class="card"><h2>รูปแบบการดำรงชีวิต</h2><div class="grid">
+<div><h3>ผู้ย่อยสลาย (Saprotroph)</h3><p>ย่อยซากสิ่งมีชีวิตและอินทรียวัตถุ ช่วยคืนธาตุอาหารสู่ระบบนิเวศ</p></div>
+<div><h3>ปรสิต (Parasite)</h3><p>อาศัยบนหรือในสิ่งมีชีวิตอื่นและได้ประโยชน์จากเจ้าบ้าน บางชนิดก่อโรค</p></div>
+<div><h3>อยู่ร่วมกันแบบพึ่งพา</h3><p>เช่น ไลเคน (รากับสาหร่าย/ไซยาโนแบคทีเรีย) และไมคอร์ไรซา (รากับพืช)</p></div>
+</div></div>
+<div class="card"><h2>การสืบพันธุ์</h2><p>สืบพันธุ์ได้ทั้งแบบไม่อาศัยเพศ เช่น การแตกหน่อ การแบ่งเซลล์ และการสร้างสปอร์ และแบบอาศัยเพศซึ่งมีการรวมกันของนิวเคลียสและเกิดสปอร์แบบอาศัยเพศ ชนิดของสปอร์เป็นลักษณะสำคัญที่ใช้จำแนกกลุ่ม</p></div>
+</section>
+
+<section id="explore" class="panel">
+<div class="card"><h2>ห้องทดลอง: การเจริญของเส้นใยรา</h2>
+<p>กดเริ่ม/หยุดเพื่อดูแบบจำลองเส้นใยที่แผ่ขยายจากจุดเริ่มต้น ปรับความเร็วเพื่อสังเกตการแตกแขนงของไฮฟา</p>
+<canvas id="hypha" width="900" height="430" aria-label="ภาพเคลื่อนไหวแบบจำลองการเจริญของเส้นใยรา"></canvas>
+<div class="controls"><button id="toggle">หยุดภาพเคลื่อนไหว</button><button class="secondary" id="reset">เริ่มใหม่</button><label>ความเร็ว <input id="speed" type="range" min="1" max="5" value="3"></label><span id="speedText" class="muted">ระดับ 3</span></div>
+<div class="callout">ภาพนี้เป็นแบบจำลองเพื่อการเรียนรู้ ไม่ใช่ภาพถ่ายหรืออัตราการเจริญจริงของเชื้อราชนิดใดชนิดหนึ่ง เส้นใยที่แตกแขนงช่วยเพิ่มพื้นที่ผิวในการดูดซึมสารอาหาร</div>
+</div>
+<div class="card"><h2>แผนภาพการได้อาหาร</h2><div class="grid">
+<div><b>1. ปล่อยเอนไซม์</b><p>เส้นใยหลั่งเอนไซม์ออกสู่สิ่งแวดล้อม</p></div><div><b>2. ย่อยภายนอกเซลล์</b><p>โมเลกุลขนาดใหญ่ถูกย่อยเป็นโมเลกุลเล็ก</p></div><div><b>3. ดูดซึม</b><p>สารอาหารโมเลกุลเล็กผ่านเยื่อหุ้มเข้าสู่เซลล์</p></div>
+</div><canvas id="food" width="900" height="180"></canvas></div>
+</section>
+
+<section id="classify" class="panel">
+<div class="card"><h2>เปรียบเทียบไฟลัม/กลุ่มสำคัญ</h2>
+<p class="muted">ตารางนี้ใช้กลุ่มหลักที่พบในการเรียนระดับมัธยม โดยชื่อและขอบเขตการจัดจำแนกอาจต่างกันตามหนังสือเรียนและระบบอนุกรมวิธานสมัยใหม่</p>
+<table><thead><tr><th>ไฟลัม/กลุ่ม</th><th>ลักษณะเด่น</th><th>ตัวอย่าง</th><th>บทบาท/การดำรงชีวิต</th></tr></thead><tbody>
+<tr><td><b>Chytridiomycota</b><br>ไคทริด</td><td>มักอยู่ในน้ำหรือที่ชื้น สร้างสปอร์ที่มีแฟลเจลลัมเคลื่อนที่ได้</td><td><i>Allomyces</i>, <i>Batrachochytrium</i></td><td>ผู้ย่อยสลาย; บางชนิดเป็นปรสิตสัตว์สะเทินน้ำสะเทินบก</td></tr>
+<tr><td><b>Zygomycota</b><br>ไซโกไมโคตา (กลุ่มดั้งเดิม)</td><td>เส้นใยมักไม่มีผนังกั้น สร้างไซโกสปอร์ในวงจรสืบพันธุ์แบบอาศัยเพศ</td><td><i>Rhizopus</i> (ราขนมปัง)</td><td>ผู้ย่อยสลายอาหารและซากสิ่งมีชีวิต</td></tr>
+<tr><td><b>Glomeromycota</b><br>โกลเมอโรไมโคตา</td><td>สร้างไมคอร์ไรซาแบบอาร์บัสคูลาร์ในรากพืช</td><td><i>Glomus</i> (ชื่อที่ใช้ในตำราเดิม)</td><td>พึ่งพากับพืช ช่วยดูดน้ำและแร่ธาตุ โดยเฉพาะฟอสเฟต</td></tr>
+<tr><td><b>Ascomycota</b><br>แอสโคไมโคตา</td><td>สร้างแอสโคสปอร์ภายในถุงแอสคัส; มีทั้งยีสต์และราเส้นใย</td><td><i>Saccharomyces</i>, <i>Penicillium</i>, เห็ดถ้วย</td><td>หมักอาหาร ผู้ย่อยสลาย ผลิตยา; บางชนิดเป็นปรสิต</td></tr>
+<tr><td><b>Basidiomycota</b><br>เบสิดิโอไมโคตา</td><td>สร้างเบสิดิโอสปอร์บนเบสิดियम มักมีดอกเห็ดให้เห็น</td><td>เห็ดฟาง เห็ดนางรม สนิมพืช</td><td>ผู้ย่อยสลายไม้; บางชนิดเป็นปรสิตพืชหรือใช้เป็นอาหาร</td></tr>
+</tbody></table>
+<div class="callout"><b>ข้อควรระวังเรื่องอนุกรมวิธาน:</b> “Zygomycota” เป็นกลุ่มดั้งเดิมที่ปัจจุบันไม่ได้รับการยอมรับเป็นไฟลัมเดี่ยวในระบบสมัยใหม่ และมีการจัดกลุ่มใหม่ ส่วน Deuteromycota หรือราไม่สมบูรณ์เป็นกลุ่มตามการไม่พบระยะอาศัยเพศ ไม่ใช่ไฟลัมธรรมชาติที่ยอมรับในปัจจุบัน</div>
+</div>
+<div class="card"><h2>ลองจำแนกจากลักษณะ</h2><p>เลือกคำบรรยาย แล้วตรวจคำตอบ</p>
+<div class="controls"><select id="clue" style="padding:10px;border-radius:9px;border:1px solid var(--line);flex:1;min-width:220px">
+<option value="chy">สปอร์มีแฟลเจลลัม เคลื่อนที่ในน้ำได้</option><option value="zyg">สร้างไซโกสปอร์ และเส้นใยมักไม่มีผนังกั้น</option><option value="glo">สร้างอาร์บัสคูลาร์ไมคอร์ไรซาในรากพืช</option><option value="asc">สร้างแอสโคสปอร์ภายในถุงแอสคัส</option><option value="bas">สร้างเบสิดิโอสปอร์บนเบสิดियम</option></select><button id="checkClue">ตรวจคำตอบ</button></div><p id="clueAnswer" class="feedback" aria-live="polite"></p></div>
+<div class="card"><h2>ฟังไจสำคัญต่อโลกอย่างไร?</h2><div class="grid">
+<div><h3>ระบบนิเวศ</h3><p>ย่อยสลายซากและหมุนเวียนคาร์บอน ไนโตรเจน และแร่ธาตุ</p></div><div><h3>เกษตรกรรม</h3><p>ไมคอร์ไรซาช่วยพืชดูดซึมธาตุอาหาร แต่เชื้อราก่อโรคพืชอาจทำให้ผลผลิตเสียหาย</p></div><div><h3>อาหารและอุตสาหกรรม</h3><p>ยีสต์ใช้ทำขนมปังและเครื่องดื่มหมัก ราบางชนิดใช้ทำซีอิ๊ว ชีส และเอนไซม์</p></div><div><h3>การแพทย์</h3><p>เพนิซิลเลียมเป็นแหล่งค้นพบเพนิซิลลิน และเชื้อราบางชนิดก่อโรคในคน</p></div></div></div>
+</section>
+
+<section id="quiz" class="panel">
+<div class="card"><h2>แบบทดสอบท้ายกิจกรรม 20 ข้อ</h2><p>เลือกคำตอบที่ถูกต้อง แล้วกด “ตรวจคำตอบ” เพื่อดูคะแนนและเฉลยรายข้อ</p>
+<form id="quizForm"><div id="questions"></div><div class="controls"><button type="button" id="submitQuiz">ตรวจคำตอบ</button><button type="button" class="secondary" id="showKey">แสดงเฉลยทั้งหมด</button><button type="reset" class="secondary" id="clearQuiz">ล้างคำตอบ</button></div></form>
+<div id="result" aria-live="polite"></div></div>
+</section>
+</main><footer>สื่อการเรียนรู้เรื่อง Kingdom Fungi • ชีววิทยา ม.6 • ใช้เพื่อการศึกษา</footer>
+<script>
+const tabs=document.querySelectorAll('.tab');tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')}));
+const canvas=document.getElementById('hypha'),ctx=canvas.getContext('2d');let branches=[],running=true,frame=0;
+function reset(){branches=[{x:450,y:390,a:-Math.PI/2,life:0,max:115,w:4},{x:450,y:390,a:-2.2,life:0,max:95,w:3},{x:450,y:390,a:-.95,life:0,max:100,w:3}];frame=0}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#f7faf5';ctx.fillRect(0,0,900,430);ctx.fillStyle='#dcebd6';ctx.fillRect(0,395,900,35);ctx.fillStyle='#8b6543';ctx.beginPath();ctx.ellipse(450,395,30,9,0,0,Math.PI*2);ctx.fill();
+branches.forEach(b=>{let x=b.x,y=b.y,angle=b.a;ctx.strokeStyle='#477e58';ctx.lineWidth=b.w;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x,y);for(let i=0;i<b.life;i++){x+=Math.cos(angle)*1.7;y+=Math.sin(angle)*1.7;ctx.lineTo(x,y)}ctx.stroke();if(b.life>24&&b.life%22===0&&b.life<b.max-15&&!b.split){b.split=true;branches.push({x,y,a:angle+(Math.random()-.5)*1.25,life:0,max:45+Math.random()*55,w:Math.max(1.2,b.w*.68)})}});ctx.fillStyle='#315b40';ctx.font='16px Tahoma';ctx.fillText('เส้นใยรา (hyphae) กำลังแผ่ขยาย',18,28)}
+function tick(){if(running){frame++;let speed=Number(document.getElementById('speed').value);branches.forEach(b=>{if(b.life<b.max&&Math.random()<speed*.11)b.life++});draw()}requestAnimationFrame(tick)}
+document.getElementById('toggle').onclick=()=>{running=!running;document.getElementById('toggle').textContent=running?'หยุดภาพเคลื่อนไหว':'เล่นภาพเคลื่อนไหว'};
+document.getElementById('reset').onclick=()=>{reset();draw()};document.getElementById('speed').oninput=e=>document.getElementById('speedText').textContent='ระดับ '+e.target.value;reset();tick();
+const fc=document.getElementById('food'),fctx=fc.getContext('2d');fctx.font='18px Tahoma';fctx.fillStyle='#315b40';fctx.fillText('เส้นใยรา',35,85);fctx.fillText('เอนไซม์',300,85);fctx.fillText('โมเลกุลเล็ก',555,85);fctx.fillText('ดูดซึมเข้าสู่เซลล์',735,85);fctx.strokeStyle='#6d9b72';fctx.lineWidth=3;[[125,70,260,70],[390,70,515,70],[650,70,710,70]].forEach(a=>{fctx.beginPath();fctx.moveTo(a[0],a[1]);fctx.lineTo(a[2],a[3]);fctx.stroke();fctx.beginPath();fctx.moveTo(a[2]-9,a[3]-7);fctx.lineTo(a[2],a[3]);fctx.lineTo(a[2]-9,a[3]+7);fctx.stroke()});fctx.fillStyle='#e7c77d';[0,1,2,3,4,5].forEach(i=>{fctx.beginPath();fctx.arc(570+i*18,125+(i%2)*15,6,0,7);fctx.fill()});
+const clueMap={chy:'Chytridiomycota (ไคทริด)',zyg:'Zygomycota กลุ่มดั้งเดิม',glo:'Glomeromycota',asc:'Ascomycota',bas:'Basidiomycota'};document.getElementById('checkClue').onclick=()=>{let k=document.getElementById('clue').value;document.getElementById('clueAnswer').innerHTML='คำตอบ: <b>'+clueMap[k]+'</b>'};
+const qs=[
+['ฟังไจจัดเป็นสิ่งมีชีวิตเซลล์ชนิดใด?',['โพรคาริโอต','ยูคาริโอต','ไม่มีเซลล์','ไวรัส'],1,'ฟังไจมีนิวเคลียสและออร์แกเนลล์ จึงเป็นยูคาริโอต'],
+['สารสำคัญที่พบในผนังเซลล์ฟังไจคือข้อใด?',['เซลลูโลส','ไคติน','เพปทิโดไกลแคน','ลิกนิน'],1,'ผนังเซลล์ฟังไจมีไคตินเป็นองค์ประกอบสำคัญ'],
+['ฟังไจได้สารอาหารด้วยวิธีใด?',['สังเคราะห์ด้วยแสง','กลืนกินอาหารทั้งชิ้น','ย่อยภายนอกแล้วดูดซึม','สร้างอาหารจากแร่ธาตุ'],2,'ฟังไจปล่อยเอนไซม์ย่อยภายนอกแล้วดูดซึมสารอาหาร'],
+['โครงสร้างเส้นใยแต่ละเส้นของรามีชื่อว่าอะไร?',['ไฮฟา','ไมซีเลียม','แอสคัส','เบสิดियम'],0,'Hypha คือเส้นใยรา ส่วน mycelium คือกลุ่มเส้นใย'],
+['กลุ่มเส้นใยราที่รวมกันเรียกว่าอะไร?',['สปอแรนเจียม','ไมซีเลียม','ไรซอยด์','โคนิเดีย'],1,'ไมซีเลียมคือมวลรวมของเส้นใยรา'],
+['ฟังไจชนิดใดเป็นเซลล์เดียวโดยทั่วไป?',['เห็ดฟาง','ยีสต์','ราขนมปัง','เห็ดหอม'],1,'ยีสต์เป็นฟังไจเซลล์เดียว'],
+['สปอร์ของ Chytridiomycota มีลักษณะเด่นอย่างไร?',['มีแฟลเจลลัม','มีเปลือกแคลเซียม','มีคลอโรฟิลล์','อยู่ในถุงแอสคัส'],0,'ไคทริดสร้างสปอร์ที่เคลื่อนที่ได้ด้วยแฟลเจลลัม'],
+['ลักษณะเด่นของ Zygomycota กลุ่มดั้งเดิมคือข้อใด?',['สร้างเบสิดิโอสปอร์','สร้างไซโกสปอร์','สร้างแอสโคสปอร์','สร้างสปอร์มีแฟลเจลลัม'],1,'กลุ่มนี้มีไซโกสปอร์ในวงจรสืบพันธุ์แบบอาศัยเพศ'],
+['ราในขนมปัง Rhizopus มักจัดอยู่ในกลุ่มใดตามการจำแนกดั้งเดิม?',['Chytridiomycota','Zygomycota','Ascomycota','Basidiomycota'],1,'Rhizopus เป็นตัวอย่างที่มักใช้สอนใน Zygomycota แบบดั้งเดิม'],
+['Glomeromycota มีความสัมพันธ์สำคัญกับสิ่งมีชีวิตใด?',['รากพืช','ปลา','แมลงเท่านั้น','แบคทีเรียก่อโรค'],0,'สร้างอาร์บัสคูลาร์ไมคอร์ไรซาร่วมกับรากพืช'],
+['Ascomycota สร้างสปอร์แบบอาศัยเพศชนิดใด?',['ไซโกสปอร์','เบสิดิโอสปอร์','แอสโคสปอร์','ซูสปอร์'],2,'แอสโคสปอร์เกิดภายในถุงที่เรียกว่าแอสคัส'],
+['Basidiomycota สร้างสปอร์บนโครงสร้างใด?',['แอสคัส','เบสิดियम','สปอแรนเจียม','ไรซอยด์'],1,'เบสิดิโอสปอร์สร้างบนเบสิดियम'],
+['เห็ดที่มีดอกเห็ดให้เห็นส่วนใหญ่อยู่ในไฟลัมใด?',['Basidiomycota','Chytridiomycota','Glomeromycota','Microsporidia'],0,'เห็ดหลายชนิดที่พบทั่วไปอยู่ใน Basidiomycota'],
+['สิ่งมีชีวิตที่ย่อยซากและคืนธาตุอาหารสู่ระบบนิเวศเรียกว่าอะไร?',['ผู้ผลิต','ผู้ย่อยสลาย','ผู้ล่า','ปรสิตจำเป็น'],1,'ฟังไจจำนวนมากเป็นผู้ย่อยสลาย'],
+['ไลเคนเป็นความสัมพันธ์ระหว่างราและสิ่งมีชีวิตใด?',['สัตว์เลี้ยงลูกด้วยนม','สาหร่ายหรือไซยาโนแบคทีเรีย','พืชดอกเท่านั้น','ไวรัส'],1,'ไลเคนเป็นการอยู่ร่วมกันของรากับสาหร่ายหรือไซยาโนแบคทีเรีย'],
+['ไมคอร์ไรซามีประโยชน์ต่อพืชอย่างไร?',['ทำให้ไม่ต้องใช้แสง','ช่วยเพิ่มการดูดน้ำและแร่ธาตุ','เปลี่ยนรากเป็นใบ','สร้างเมล็ด'],1,'เส้นใยราช่วยเพิ่มพื้นที่ดูดซึมน้ำและแร่ธาตุ เช่น ฟอสเฟต'],
+['ข้อใดเป็นการใช้ประโยชน์จากยีสต์?',['ทำขนมปังให้ขึ้นฟู','ผลิตออกซิเจนด้วยแสง','สร้างปุ๋ยไนโตรเจนโดยตรง','ย่อยพลาสติกทุกชนิด'],0,'ยีสต์หมักน้ำตาลเกิดคาร์บอนไดออกไซด์ ทำให้แป้งขึ้นฟู'],
+['เหตุใดฟังไจจึงไม่จัดเป็นพืช?',['มีผนังเซลล์','ไม่มีคลอโรฟิลล์และดูดซึมอาหาร','มีนิวเคลียส','ส่วนใหญ่ไม่เคลื่อนที่'],1,'ฟังไจไม่มีคลอโรฟิลล์และเป็นผู้บริโภคแบบดูดซึม'],
+['Deuteromycota หรือราไม่สมบูรณ์ในตำราเก่าหมายถึงอะไร?',['กลุ่มที่ไม่พบระยะสืบพันธุ์แบบอาศัยเพศ','กลุ่มที่ไม่มีผนังเซลล์','กลุ่มที่สังเคราะห์แสงได้','กลุ่มที่มีแฟลเจลลัมทุกชนิด'],0,'เป็นกลุ่มตามข้อมูลระยะสืบพันธุ์ที่สังเกตได้ ไม่ใช่ไฟลัมธรรมชาติที่ยอมรับในระบบสมัยใหม่'],
+['บทบาทใดสะท้อนความสำคัญของฟังไจต่อระบบนิเวศมากที่สุด?',['หยุดการหมุนเวียนธาตุ','ย่อยสลายซากและหมุนเวียนสาร','ทำให้พืชทุกชนิดเป็นปรสิต','ผลิตแสง'],1,'ผู้ย่อยสลายช่วยคืนธาตุอาหารและรักษาการหมุนเวียนสารในระบบนิเวศ']
+];
+const qbox=document.getElementById('questions');qs.forEach((q,i)=>{let d=document.createElement('div');d.className='quiz-q';d.innerHTML='<p>'+(i+1)+'. '+q[0]+'</p>'+q[1].map((o,j)=>'<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'">'+String.fromCharCode(65+j)+' '+o+'</label>').join('')+'<div class="feedback" id="fb'+i+'"></div>';qbox.appendChild(d)});
+function grade(showAll){let score=0,answered=0;qs.forEach((q,i)=>{let a=document.querySelector('input[name=q'+i+']:checked'),fb=document.getElementById('fb'+i);if(a){answered++;if(+a.value===q[2])score++}if(showAll||a){fb.className='feedback '+(a&&+a.value===q[2]?'correct':'wrong');fb.textContent='เฉลย: '+String.fromCharCode(65+q[2])+' '+q[1][q[2]]+' — '+q[3]}else{fb.textContent='ยังไม่ได้ตอบ'}});document.getElementById('result').innerHTML='<p class="score">คะแนน '+score+'/20 ข้อ • ตอบแล้ว '+answered+'/20 ข้อ</p><p class="muted">'+(score>=16?'ยอดเยี่ยม! เข้าใจเนื้อหาได้ดี':score>=12?'ทำได้ดี ทบทวนข้อที่ผิดอีกเล็กน้อย':'แนะนำให้กลับไปทบทวนลักษณะสำคัญและการจำแนกไฟลัม')+'</p>'}
+document.getElementById('submitQuiz').onclick=()=>grade(false);document.getElementById('showKey').onclick=()=>grade(true);document.getElementById('clearQuiz').onclick=()=>{setTimeout(()=>{document.querySelectorAll('.feedback').forEach(x=>x.textContent='');document.getElementById('result').textContent=''},0)};
+</script></body></html>
